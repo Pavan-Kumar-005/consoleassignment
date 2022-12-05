@@ -23,14 +23,14 @@ namespace assignment1
         {
             driver.Navigate().GoToUrl("https://rahulshettyacademy.com/AutomationPractice/");
 
-            //excercise();
-            //exercice2();
-            //exercice3();
-            //switchTab();
-            //switchwindow();
-            //exercice4();
-            //exercice8();
-            //exercice9();
+            excercise();
+            exercice2();
+            exercice3();
+            switchTab();
+            switchwindow();
+            exercice4();
+            exercice8();
+            exercice9();
 
 
             //Console.WriteLine("Hello World!");
@@ -125,7 +125,10 @@ namespace assignment1
             IWebElement switchtab = driver.FindElement(By.Id("opentab"));
             switchtab.Click();
             Thread.Sleep(2000);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
+            
         }
 
         public static void switchwindow()
@@ -133,6 +136,8 @@ namespace assignment1
             IWebElement switchwind = driver.FindElement(By.Id("openwindow"));
             switchwind.Click();
             Thread.Sleep(2000);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
         }
 
